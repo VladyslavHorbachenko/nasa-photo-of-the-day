@@ -1,15 +1,22 @@
 import React from "react";
 import "./App.css";
 import NasaGrid from './NasaGrid';
+import styled  from 'styled-components'
 
-function App() {
+const WrapperDiv = styled.div `
+    font-size:40px;
+    color:red;
+`
+function App(props) {
   return (
     <div className="App">
+      <WrapperDiv>
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!z
       </p>
-      <NasaGrid/>
+      </WrapperDiv>
+      <NasaGrid />
     </div>
   );
 }

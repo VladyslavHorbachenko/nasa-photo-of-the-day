@@ -1,7 +1,14 @@
 import React,{useState, useEffect} from 'react'
 import NasaCard from './NasaCard';
 import axios from 'axios';
+import { Button,Row,Col, Container } from 'reactstrap';
+import styled  from 'styled-components'
 
+const ImgSize = styled.div
+`   
+    display:flex;
+    justify-content: space-evenly;
+`
 function NasaGrid(){
     const[pict,setPict] = useState([]);
 
@@ -18,10 +25,16 @@ function NasaGrid(){
         })
     },[]);
     
-    return <div className = "container">
-        <div className = "entry">
-              <NasaCard src = {pict}/>  
-        </div>
-    </div>
+    return <Container>
+        <ImgSize>
+        <Row>
+                <NasaCard src = {pict}/> 
+                <NasaCard src = {pict}/> 
+                <NasaCard src = {pict}/> 
+                </Row>
+           
+        </ImgSize>
+        
+        </Container>
 }
 export default NasaGrid;
